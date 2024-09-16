@@ -11,7 +11,7 @@ public class GridManagement : MonoBehaviour
 
     [Range(0, 5)]
     public int tickRate;
-    [Range(0, 100)]
+    [Range(0, 5000)]
     public float cameraSize;
     private float tickValue = 0;
     [Range(0, 1)]
