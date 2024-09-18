@@ -228,10 +228,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go: {fileID: 7772934934529052038, guid: edf1303893bac2045a983c4872779abe, type: 3}
-  nearbyLivingCells: 0
-  tickRate: 3
+  tickRate: 0.1
   cameraSize: 25
-  cellAliveProbability: 0.8
+  cellAliveProbability: 0.2
   maxX: 25
   maxY: 25
 --- !u!1660057539 &9223372036854775807

@@ -6,11 +6,11 @@ public class GridManagement : MonoBehaviour
 {
 
     public GameObject go; //sprite som printas
-    [HideInInspector] public int nearbyLivingCells; //hur många levande celler som finns nära
+    //[HideInInspector] public int nearbyLivingCells; //hur många levande celler som finns nära
 
 
-    [Range(0, 5)]
-    public int tickRate;
+    [Range(0, 2)]
+    public float tickRate;
     [Range(0, 5000)]
     public float cameraSize;
     private float tickValue = 0;
@@ -54,9 +54,7 @@ public class GridManagement : MonoBehaviour
             {
                 for (int j = 0; j < maxY; j++)
                 {
-                    CheckAliveCells(i, j);
-                    Grid[i, j].howManyNeighbour = nearbyLivingCells;
-                    nearbyLivingCells = 0;
+                    Grid[i, j].howManyNeighbour = CheckAliveCells(i, j);
                 }
             }
             for (int i = 0; i < maxX; i++)
@@ -70,8 +68,9 @@ public class GridManagement : MonoBehaviour
         }
 
     }
-    void CheckAliveCells(int x, int y) //funktion som kollar hur många levande celler som finns i närheten
+    int CheckAliveCells(int x, int y) //funktion som kollar hur många levande celler som finns i närheten
     {
+        int nearbyLivingCells = 0;
         for (int j = -1; j <= 1; j++)
         {
             for (int i = -1; i <= 1; i++)
@@ -99,6 +98,7 @@ public class GridManagement : MonoBehaviour
                 }
             }
         }
+        return nearbyLivingCells;
 
     }
 
